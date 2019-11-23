@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Contact here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script type="text/javascript">
+	function alta(){
+		var url="http://localhost:8080/07_crud_contactos_rest_adri/contactos";
+		var obj=new Object();
+		obj.nombre=$("#nombre").val();
+		obj.edad=parseInt($("#edad").val());
+		obj.email=$("#email").val();
+		$.ajax({"url":url,
+			"data":JSON.stringify(obj),
+			"type":"POST",
+			"contentType":"application/json"})
+			.done(function(){
+				window.location.href="menu.html";
+		});
+	}
+	</script>
+</head>
+<body>
+<div class="container">
+	<h1>Formulario de autenticación</h1>
+	<form >
+
+		<div class="form-group">
+			<label>Nombre:</label>
+			<input type="text" id="nombre" class="form-control" style="width:30%" placeholder="Usuario" />
+		</div>
+		<div class="form-group">
+			<label>Correo electrónico:</label>
+			<input type="email" id="email" class="form-control" style="width:30%" placeholder="identificador@dominio.es"/>
+		</div>
+		  <div class="form-group">
+		    <label class="control-label col-sm-2" for="age">Edad:</label>
+		    <div class="col-sm-10">
+		      <input type="number" id="edad" class="form-control" id="edad"  />
+		    </div>
+		  </div>
+		
+		<button type="button" class="btn btn-default" onclick="alta();">Guardar</button>
+		
+	</form>
+</div>
+</body>
+</html>

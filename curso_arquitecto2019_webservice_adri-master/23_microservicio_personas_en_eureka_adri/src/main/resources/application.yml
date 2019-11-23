@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: servicio-personas
+server:
+  port: 8000
+  servlet:    context-path: /personas
+eureka:  client:    service-url:      defaultZone: http://localhost:8761/eureka

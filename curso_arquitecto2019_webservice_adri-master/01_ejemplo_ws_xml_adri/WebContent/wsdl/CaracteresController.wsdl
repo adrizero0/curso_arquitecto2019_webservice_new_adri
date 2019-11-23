@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controller" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controller" xmlns:intf="http://controller" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controller" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="contarVolcales">
+    <complexType>
+     <sequence>
+      <element name="cad" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="contarVolcalesResponse">
+    <complexType>
+     <sequence>
+      <element name="contarVolcalesReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="contarVolcalesResponse">
+
+      <wsdl:part element="impl:contarVolcalesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="contarVolcalesRequest">
+
+      <wsdl:part element="impl:contarVolcales" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CaracteresController">
+
+      <wsdl:operation name="contarVolcales">
+
+         <wsdl:input message="impl:contarVolcalesRequest" name="contarVolcalesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:contarVolcalesResponse" name="contarVolcalesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CaracteresControllerSoapBinding" type="impl:CaracteresController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="contarVolcales">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="contarVolcalesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="contarVolcalesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CaracteresControllerService">
+
+      <wsdl:port binding="impl:CaracteresControllerSoapBinding" name="CaracteresController">
+
+         <wsdlsoap:address location="http://localhost:8080/01_ejemplo_ws_xml_adri/services/CaracteresController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

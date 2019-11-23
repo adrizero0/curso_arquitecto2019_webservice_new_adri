@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Show contacts here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+
+<body onload="listaContactos();">
+
+	<script type="text/javascript">
+	var url="http://localhost:8080/07_crud_contactos_rest_adri/contactos";
+		function listaContactos(){
+			$.get(url,function(data,status){
+				procesarRespuesta(data);
+			});
+			
+		}
+		function procesarRespuesta(data){			
+			let tabla="<table border='1'><tr><th>Nombre</th><th>Email</th><th>Edad</th><th></th></tr>";
+			$.each(data,function(index,e){
+				tabla+="<tr><td>"+e.nombre+"</td><td>"+e.email+"</td><td>"+e.edad+"</td>";
+				tabla+="<td><a href='#' onclick='eliminar("+e.idContacto+");'>Eliminar</a></td></tr>";
+			});
+			tabla+="</table>";
+			$("#tabla").html(tabla);
+		}
+		function eliminar(id){			
+			$.ajax({"url":url+"/"+id,"type":"DELETE"});
+			listaContactos();
+		}	
+	</script>
+
+	
+
+<div class="container">
+	<div  id="tabla"></div>
+	
+    <div class="col-sm-10">		
+		<a type="button" href='menu.html' class="btn btn-default">Volver</a>
+	</div>
+	
+</div>
+
+</body>
+</html>
