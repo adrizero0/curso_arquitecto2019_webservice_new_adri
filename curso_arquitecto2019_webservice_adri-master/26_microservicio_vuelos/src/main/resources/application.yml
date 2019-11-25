@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: servicio-vuelos
-server:
-  port: 8600
-  servlet:    context-path: /vuelos
-eureka:  client:    service-url:      defaultZone: http://localhost:8761/eureka

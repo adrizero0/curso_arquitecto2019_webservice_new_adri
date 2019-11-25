@@ -52,6 +52,14 @@ public class ReservaController {
 		ResponseEntity <String> response=new ResponseEntity<String> ("reserva", new HttpHeaders(),estado);
 		return response;
 	}
-
+//	{"reserva":
+//	{
+//        "dni": "444",
+//        "hotel": 2,
+//        "nombre": "pipjgi",
+//        "vuelo": 2
+//    },
+// "plazas":2
+//}
 	
 }
