@@ -40,7 +40,8 @@
 		app.controller("comunicacionController",function($scope,$http){
 			$scope.reservas=[];	
 			$scope.cargar=function(){
-				let url="http://localhost:8700/reservas/reservas";
+// 				let url="http://localhost:8700/reservas/reservas";
+				let url="http://10.2.4.12:7000/reservas/reservas/lista";
 				$http.get(url).then(function(res){
 					$scope.reservas=res.data;			
 				});
