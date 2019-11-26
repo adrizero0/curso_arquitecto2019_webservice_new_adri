@@ -24,7 +24,7 @@ public class Application {
 	    config.setAllowCredentials(true);
 	    config.addAllowedOrigin("*");
 	    config.addAllowedHeader("*");
-	    config.addAllowedMethod("*");
+	    config.addAllowedMethod("POST, GET, PUT");
 	    source.registerCorsConfiguration("*", config);
 	    FilterRegistrationBean bean = new FilterRegistrationBean(new org.springframework.web.filter.CorsFilter(source));
 	    bean.setOrder(0);
