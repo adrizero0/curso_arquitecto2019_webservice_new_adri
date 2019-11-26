@@ -1,7 +1,6 @@
 spring:
   application:
-    name: servicio-frontal-viajes
+    name: servicio-viajes-hoteles
   cloud:
     config:
       uri: http://localhost:8888
-      
