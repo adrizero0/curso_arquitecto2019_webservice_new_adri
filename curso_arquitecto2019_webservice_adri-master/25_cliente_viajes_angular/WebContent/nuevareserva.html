@@ -91,7 +91,7 @@
 			$scope.cargarHoteles=function(){
 				
 // 				let url = "http://localhost:8000/hoteles/lista";						//CONEXION DIRECTA AL MICROSERVICIO
-				let url = "http://192.168.0.10:7000/hoteles/hoteles/lista";				//CONEXION A TRAVES DEL ZUUL->LIBRERIA RIBBON->EUREKA->MICROSERVICIO PATH
+				let url = "http://reservas:7000/hoteles/hoteles/lista";					//CONEXION A TRAVES DEL ZUUL->LIBRERIA RIBBON->EUREKA->MICROSERVICIO PATH
 				$http.get(url).then(function(res){										//192.168.0.10 PUERTO CASA
 					$scope.hoteles=res.data;
 								

@@ -33,7 +33,7 @@ public class ReservaController {
 	@Value("${client.url.vuelos}")
 	String url;
 	
-	@GetMapping(value = "/reservas", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/lista", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Reserva> obtenerReservas(){
 		return sReservas.getReservas();		
 	}
