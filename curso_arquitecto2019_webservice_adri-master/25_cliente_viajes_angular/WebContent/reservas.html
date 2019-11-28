@@ -41,7 +41,7 @@
 			$scope.reservas=[];	
 			$scope.cargar=function(){
 // 				let url="http://localhost:8700/reservas/reservas";
-				let url="http://10.2.4.12:7000/reservas/reservas/reservas";
+				let url="http://192.168.0.10:7000/reservas/reservas/";
 				$http.get(url).then(function(res){
 					$scope.reservas=res.data;
 				});

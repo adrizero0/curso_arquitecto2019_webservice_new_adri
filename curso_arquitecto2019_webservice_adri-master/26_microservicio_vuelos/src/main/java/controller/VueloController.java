@@ -29,7 +29,7 @@ public class VueloController {
 	
 	@PutMapping (value = "/vuelos/{idVuelo}/{plazas}", produces=MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity <String> actualizar(@PathVariable("idVuelo") int idVuelo,
-									@PathVariable("plazas") int plazas) {
+												@PathVariable("plazas") int plazas) {
 		HttpStatus estado;
 		boolean actualizar=sVuelos.actualizarVuelo(idVuelo, plazas);
 		

@@ -78,7 +78,6 @@
 	</div>
 	<script>
 		var app=angular.module("comunicacionApp",[]);
-		var ipconfig="10.2.4.12";
 		
 		app.controller("comunicacionController",function($scope,$http){
 			$scope.vuelos=[];
@@ -91,23 +90,23 @@
 			$scope.mostrarTabla=true;			
 			$scope.cargarHoteles=function(){
 				
-// 				let url = "http://localhost:8000/hoteles/lista";			//CONEXION DIRECTA AL MICROSERVICIO
-				let url = "http://ipconfig:7000/hoteles/hoteles/lista";		//CONEXION A TRAVES DEL ZUUL->LIBRERIA RIBBON->EUREKA->MICROSERVICIOS
-				$http.get(url).then(function(res){							//192.168.0.10 PUERTO CASA
+// 				let url = "http://localhost:8000/hoteles/lista";						//CONEXION DIRECTA AL MICROSERVICIO
+				let url = "http://192.168.0.10:7000/hoteles/hoteles/lista";				//CONEXION A TRAVES DEL ZUUL->LIBRERIA RIBBON->EUREKA->MICROSERVICIO PATH
+				$http.get(url).then(function(res){										//192.168.0.10 PUERTO CASA
 					$scope.hoteles=res.data;
 								
 				});
 			}
 			$scope.cargarVuelos=function(){				
-// 				let url = "http://localhost:8600/vuelos/vuelos/1";				
-				let url = "http://ipconfig:7000/vuelos/vuelos/vuelos/1";
+// 				let url = "http://localhost:8600/vuelos/vuelos/1";			
+				let url = "http://localhost:7000/vuelos/vuelos/vuelos/1";
 				$http.get(url).then(function(res){
 					$scope.vuelos=res.data;
 				});
 			}
 			$scope.reservar=function(){
 // 				let url="http://localhost:8700/reservas/reservas";
-				let url = "http://ipconfig:7000/reservas/reservas/reservas";
+				let url = "http://localhost:7000/reservas/reservas/reservas";
 				let ob=new Object();
 				ob.nombre=$scope.nombre;
 				ob.dni=$scope.dni;
