@@ -44,8 +44,8 @@ public class AccionController {
 			}
 		});
 	}
+	
 	private boolean cambio(List<Accion> anterior,List<Accion> actual ) {
-		
 		if(anterior==null) {
 			return true;
 		}else {

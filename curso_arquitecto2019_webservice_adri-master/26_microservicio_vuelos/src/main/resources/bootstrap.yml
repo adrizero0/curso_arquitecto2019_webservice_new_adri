@@ -3,5 +3,5 @@ spring:
     name: servicio-viajes-vuelos
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: http://10.2.4.12:8888
       
