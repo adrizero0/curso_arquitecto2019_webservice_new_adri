@@ -14,7 +14,7 @@ import model.Contacto;
 public class AltaController {
 	@Autowired
 	RestTemplate template;
-	String url="http://localhost:8080/07_crud_contactos_rest/contactos";
+	String url="http://localhost:8080/07_crud_contactos_rest_adri/contactos";
 	@GetMapping(value="/toAlta")
 	public String inicio(Model model) {
 		Contacto cl=new Contacto();

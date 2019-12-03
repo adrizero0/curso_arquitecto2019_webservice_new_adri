@@ -30,8 +30,4 @@ public class GetController {
 		template.delete(url+"/"+idContacto);		
 		return "forward:/toListaContactos";
 	}
-
 }
-
-
-
