@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var evt;
+	var url="http://localhost:8006/alarmas/lista/2";
+	function suscripcion(){
+		evt=new EventSource(url);
+		
+		evt.addEventListener("message",function(e){
+			var tabla="<table border='1'><tr><th>Company</th><th>Precio</th></tr>";
+			var array=JSON.parse(e.data);
+			for(var i=0;i<array.length;i++){
+				tabla+="<tr><td>"+array[i].idSensor+"</td><td>"+array[i].estado+"</td></tr>";
+			}
+			tabla+="</table>";		
+			document.getElementById("tabla").innerHTML=tabla;
+		});
+		
+		
+	}
+
+</script>
+
+</head>
+<body onload="suscripcion();">
+
+<div id="tabla">
+
+</div>
+</body>
+</html>
